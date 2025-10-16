@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTM Order Form Entry</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="top-bar">
+        <h1>JTM Group - Order Form</h1>
+        <button id="historyBtn" class="btn-history">
+          <i class="fa-solid fa-clock-rotate-left"></i> History
+        </button>
+      </div>
+      <p>Enter the details below to generate a new order form.</p>
+
+      <div class="header-details">
+        <div class="input-group">
+          <label for="partyName">M/S.</label>
+          <input
+            type="text"
+            id="partyName"
+            name="partyName"
+            placeholder="Enter party's name"
+          />
+        </div>
+        <div class="input-group">
+          <label for="gstNo">GST No.</label>
+          <input
+            type="text"
+            id="gstNo"
+            name="gstNo"
+            placeholder="Enter GST Number"
+          />
+        </div>
+        <div class="input-group">
+          <label for="orderNo">Order no.</label>
+          <input
+            type="text"
+            id="orderNo"
+            name="orderNo"
+            placeholder="Enter Order Number"
+          />
+        </div>
+        <div class="input-group">
+          <label for="orderDate">Date</label>
+          <input type="date" id="orderDate" name="orderDate" />
+        </div>
+      </div>
+
+      <hr />
+
+      <h2>Products</h2>
+      <div id="product-rows"></div>
+
+      <button id="addProductBtn" class="btn-add">+ Add Another Product</button>
+
+      <hr />
+
+      <button id="generatePdfBtn" class="btn-generate">
+        Generate & Save PDF
+      </button>
+
+      <div class="total-container">
+        <h2>Grand Total: <span id="grandTotal">0.00</span></h2>
+      </div>
+    </div>
+
+    <div id="historyModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Order History</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div id="historyList" class="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
