@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- This line is essential for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTM Order Form Entry</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-header">
+        <img src="./logo.png" alt="JTM Logo" class="logo" />
+        <h1>JTM Group Order Portal</h1>
+        <p>Create and generate new customer order forms with ease.</p>
+      </div>
+
+      <!-- Section 1: Order Details -->
+      <h2 class="section-title">
+        <i class="fa-solid fa-file-invoice"></i> Order Details
+      </h2>
+      <div class="details-section">
+        <div class="input-group">
+          <label for="partyName">M/S.</label>
+          <input
+            type="text"
+            id="partyName"
+            name="partyName"
+            list="party-list"
+            placeholder="Select or type a Party"
+          />
+        </div>
+        <div class="input-group">
+          <label for="orderNo">Order No.</label>
+          <input
+            type="text"
+            id="orderNo"
+            name="orderNo"
+            placeholder="e.g., 1005"
+          />
+        </div>
+        <div class="input-group">
+          <label for="gstNo">GST No.</label>
+          <input
+            type="text"
+            id="gstNo"
+            name="gstNo"
+            placeholder="Customer GST Number"
+          />
+        </div>
+        <div class="input-group">
+          <label for="orderDate">Date</label>
+          <input type="date" id="orderDate" name="orderDate" />
+        </div>
+      </div>
+
+      <!-- Section 2: Shipping & Terms -->
+      <h2 class="section-title">
+        <i class="fa-solid fa-truck-fast"></i> Shipping & Terms
+      </h2>
+      <div class="details-section">
+        <div class="input-group">
+          <label for="transport">Transport</label>
+          <input
+            type="text"
+            id="transport"
+            name="transport"
+            placeholder="e.g., By Road"
+          />
+        </div>
+        <div class="input-group">
+          <label for="destination">Destination</label>
+          <input
+            type="text"
+            id="destination"
+            name="destination"
+            list="destination-list"
+            placeholder="Select or type a Destination"
+          />
+        </div>
+        <div class="input-group">
+          <label for="discount">Discount</label>
+          <input
+            type="text"
+            id="discount"
+            name="discount"
+            placeholder="e.g., 10%"
+          />
+        </div>
+        <div class="input-group">
+          <label for="paymentWithin">Payment Within</label>
+          <input
+            type="text"
+            id="paymentWithin"
+            name="paymentWithin"
+            placeholder="e.g., 30 Days"
+          />
+        </div>
+      </div>
+
+      <!-- Section 3: Products -->
+      <h2 class="section-title">
+        <i class="fa-solid fa-boxes-stacked"></i> Products
+      </h2>
+      <!-- NEW: Headers for the product row, visible only on desktop -->
+      <div class="product-row-header">
+        <label>Description</label>
+        <label>Mtrs.</label>
+        <label>Pcs.</label>
+        <label>Rate</label>
+        <label>Remarks</label>
+        <label></label>
+        <!-- Empty label for the button column -->
+      </div>
+      <div id="product-rows">
+        <!-- Product rows will be added here by JavaScript -->
+      </div>
+
+      <button id="addProductBtn" class="btn-add">
+        <i class="fa-solid fa-plus"></i> Add Another Product
+      </button>
+
+      <div class="form-footer">
+        <button id="generatePdfBtn" class="btn-generate">
+          <i class="fa-solid fa-file-arrow-down"></i> Generate PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Datalists -->
+    <datalist id="party-list">
+      <option value="Suriya Textiles"></option>
+      <option value="Ganga Silk"></option>
+      <option value="Sadhguru Cloth Stores"></option>
+      <option value="Ashokkumar Rajendarkkumar"></option>
+      <option value="Madanlal Vinodkumar"></option>
+    </datalist>
+    <datalist id="destination-list">
+      <option value="Jodhpur"></option>
+      <option value="Beawar"></option>
+      <option value="Chittorgarh"></option>
+      <option value="Nanded"></option>
+      <option value="Bhilwara"></option>
+    </datalist>
+    <datalist id="product-list">
+      <option value="Metalime"></option>
+      <option value="Bristol"></option>
+      <option value="Venice"></option>
+      <option value="Rolex"></option>
+      <option value="Fortuner"></option>
+      <option value="Sacha hira"></option>
+      <option value="Marvelous"></option>
+      <option value="Columbia"></option>
+      <option value="Thandai"></option>
+    </datalist>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
